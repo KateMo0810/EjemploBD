@@ -39,6 +39,7 @@ public class ServletParcial extends  HttpServlet{
          DAOEjercicios daoEjerci = new DAOEjercicios();
          String topico = request.getParameter("topico");
           List<Ejercicios> promedios= daoEjerci.findAllByTopic(topico);
+          System.out.println(promedios.size());
          request.setAttribute("promedios", promedios);
          //Redireccionando la informacion
          RequestDispatcher redireccion = request.getRequestDispatcher("index.jsp");
