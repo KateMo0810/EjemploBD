@@ -5,28 +5,25 @@
  */
 package com.crunchify.jsp.servlet;
 
-import edu.co.sergio.mundo.dao.DAOEscuela;
-import edu.co.sergio.mundo.dao.DAOEstudiante;
-import edu.co.sergio.mundo.vo.Escuela;
-import edu.co.sergio.mundo.vo.Estudiante;
+
+import edu.co.sergio.mundo.dao.DAOEjercicios;
+import edu.co.sergio.mundo.vo.Ejercicios;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 /**
  *
  * @author fabian.giraldo
  */
-public class ServletEscuela extends  HttpServlet{
+public class ServletParcial extends  HttpServlet{
      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         DAOEscuela daoEscuela = new DAOEscuela();
-         List<Escuela> escuelas= daoEscuela.findAll();
-         request.setAttribute("escuelas", escuelas);
+         DAOEjercicios daoEj = new DAOEjercicios();
+         List<Ejercicios> escuelas= daoEj.findAll();
+         request.setAttribute("topicos", escuelas);
          //Redireccionando la informacion
          RequestDispatcher redireccion = request.getRequestDispatcher("index.jsp");
          redireccion.forward(request, response);      
@@ -35,10 +32,10 @@ public class ServletEscuela extends  HttpServlet{
      
      
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         DAOEstudiante daoEstudiante = new DAOEstudiante();
-         String escuela = request.getParameter("escuela");
-         List<Estudiante> estudiantes= daoEstudiante.findAllByEscuela(Integer.parseInt(escuela));
-         request.setAttribute("estudiantes", estudiantes);
+         DAOEjercicios daoEjerci = new DAOEjercicios();
+         String topico = request.getParameter("topico");
+         Ejercicios ejercicio= daoEjerci.findAllByTopic(topico);
+         request.setAttribute("promedios", ejercicio);
          //Redireccionando la informacion
          RequestDispatcher redireccion = request.getRequestDispatcher("index.jsp");
          redireccion.forward(request, response);      

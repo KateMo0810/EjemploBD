@@ -19,15 +19,15 @@ body {
     <body>
         <div align="center" style="margin-top: 50px;">
             <%
-              if(request.getAttribute("escuelas")!=null){
+              if(request.getAttribute("topicos")!=null){
             %>   
-            <form action="Escuela" method="post">
-                <select name = "escuela">
+            <form action="Topico" method="post">
+                <select name = "Tópico">
            <%
-              List<Escuela> escuelas  = (List<Escuela>)request.getAttribute("escuelas");  
-               for (Escuela escuela : escuelas) {
+              List<Ejercicios> top  = (List<Ejercicios>)request.getAttribute("topicos");  
+               for (Ejercicios ej : top) {
              %>
-               <option value="<%=escuela.getCodigo()%>"><%=escuela.getNombre()%></option>
+               <option value="<%=ej.getTopico()%>"><%=ej.getTopico()%></option>
              
              <%
                }
@@ -47,24 +47,22 @@ body {
         <div align="center" style="margin-top: 50px;">
             
             <%
-              if(request.getAttribute("estudiantes")!=null){
+              if(request.getAttribute("promedios")!=null){
             %>      
               <table style="width:100%">
                <tr>
-                    <th>Codigo</th>
-                    <th>Nombre</th> 
-                    <th>Escuela</th>
+                    <th>Tópico</th>
+                    <th>Promedio</th> 
               </tr>
                 
               <%
-              List<Estudiante> estudiantes  = (List<Estudiante>)request.getAttribute("estudiantes");  
-               for (Estudiante estudiante : estudiantes) {
+              Ejercicios promedios  = (List<Estudiante>)request.getAttribute("promedios");  
+               for (Ejercicios ejerci : promedios) {
              %>
              
                <tr>
-                  <td><%=estudiante.getCodigo()%></td>
-                  <td><%=estudiante.getNombre()%></td> 
-                  <td><%=estudiante.getEscuela()%></td>
+                  <td><%=ejerci.getTopico()%></td>
+                  <td><%=estudiante.getPromedio()%></td> 
               </tr>
              
              <%

@@ -14,13 +14,13 @@
     </welcome-file-list>
        
     <servlet>
-        <servlet-name>Escuela</servlet-name>
-        <servlet-class>com.crunchify.jsp.servlet.ServletEscuela</servlet-class>
+        <servlet-name>Parcial</servlet-name>
+        <servlet-class>com.crunchify.jsp.servlet.ServletParcial</servlet-class>
     </servlet>
     
     <servlet-mapping>
-        <servlet-name>Escuela</servlet-name>
-        <url-pattern>/Escuela</url-pattern>
+        <servlet-name>Parcial</servlet-name>
+        <url-pattern>/Parcial</url-pattern>
     </servlet-mapping>
 
 </web-app>
