@@ -56,17 +56,17 @@ body {
               </tr>
                 
               <%
-              Ejercicios promedios  = (List<Ejercicios>)request.getAttribute("promedios");  
-               for (Ejercicios ejerci : promedios) {
+              Ejercicios promedios  = request.getAttribute("promedios");  
+               
              %>
              
                <tr>
-                  <td><%=ejerci.getTopico()%></td>
-                  <td><%=ejerci.getPromedio()%></td> 
+                  <td><%=promedios.getTopico()%></td>
+                  <td><%=promedios.getPromedio()%></td> 
               </tr>
              
              <%
-             }
+             
              %>
                
                 </table>
