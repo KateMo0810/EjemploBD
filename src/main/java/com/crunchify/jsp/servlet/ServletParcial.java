@@ -27,6 +27,7 @@ public class ServletParcial extends  HttpServlet{
      @Override
      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          DAOEjercicios daoEj = new DAOEjercicios();
+         
          List<Ejercicios> escuelas= daoEj.findAll();
          request.setAttribute("topicos", escuelas);
          //Redireccionando la informacion
