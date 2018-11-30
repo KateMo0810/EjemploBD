@@ -24,7 +24,7 @@ body {
               if(request.getAttribute("topicos")!=null){
             %>   
             <form action="Parcial" method="post">
-                <select name = "Tópico">
+                <select name = "topico">
            <%
               List<Ejercicios> top  = (List<Ejercicios>)request.getAttribute("topicos");  
                for (Ejercicios ej : top) {
