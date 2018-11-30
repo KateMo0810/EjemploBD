@@ -24,8 +24,8 @@ import java.util.logging.Logger;
 public class DAOEjercicios {
     
     
-    public Ejercicios findAllByTopic(String topic) {
-        Ejercicios ejer = null;
+    public List<Ejercicios>  findAllByTopic(String topic) {
+        List<Ejercicios> ejer = null;
         String query = "SELECT EXERCICES.TOPIC,AVG(POINTS) FROM EXERCICES NATURAL JOIN RESULTS WHERE TOPIC=? GROUP BY EXERCICES.TOPIC;";
         Connection connection = null;
         try {
@@ -42,12 +42,19 @@ public class DAOEjercicios {
             String topico = null;
 
             while (rs.next()) {
-              
-                ejer = new Ejercicios();
+               if (ejer == null) {
+                    ejer = new ArrayList<Ejercicios>();
+                }
+
+                Ejercicios estudiante = new Ejercicios();
                 promedio = rs.getDouble("avg");
-                ejer.setPromedio(promedio);
-                topico = rs.getString("topic");
-                ejer.setTopico(topico);
+                estudiante.setPromedio(promedio);
+
+                topico = rs.getString("topico");
+                estudiante.setTopico(topico);
+                
+                
+                ejer.add(estudiante);
             }
             preparedStmt.close();
 
