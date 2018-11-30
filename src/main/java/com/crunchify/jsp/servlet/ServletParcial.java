@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author fabian.giraldo
  */
 public class ServletParcial extends  HttpServlet{
+     @Override
      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          DAOEjercicios daoEj = new DAOEjercicios();
          List<Ejercicios> escuelas= daoEj.findAll();
@@ -35,6 +36,7 @@ public class ServletParcial extends  HttpServlet{
      }
      
      
+     @Override
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          
          DAOEjercicios daoEjerci = new DAOEjercicios();
