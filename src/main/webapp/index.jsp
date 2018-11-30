@@ -56,7 +56,7 @@ body {
               </tr>
                 
               <%  
-              Ejercicios promedios  = (List<Ejercicios>)request.getAttribute("promedios");  
+              List<Ejercicios> promedios  = (List<Ejercicios>)request.getAttribute("promedios");  
                for (Ejercicios ejerci : promedios) {
              %>
              
