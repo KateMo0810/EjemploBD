@@ -17,6 +17,7 @@ body {
         <title>Estudiantes</title>
     </head>
     <body>
+        <h1> Lista de Tópicos</h1>
         <div align="center" style="margin-top: 50px;">
             <%
               if(request.getAttribute("topicos")!=null){
