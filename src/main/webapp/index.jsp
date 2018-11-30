@@ -17,12 +17,13 @@ body {
         <title>Estudiantes</title>
     </head>
     <body>
-        <h1> Lista de Tópicos</h1>
+        
         <div align="center" style="margin-top: 50px;">
+            <h1> Lista de Tópicos</h1>
             <%
               if(request.getAttribute("topicos")!=null){
             %>   
-            <form action="Topico" method="post">
+            <form action="Parcial" method="post">
                 <select name = "Tópico">
            <%
               List<Ejercicios> top  = (List<Ejercicios>)request.getAttribute("topicos");  
