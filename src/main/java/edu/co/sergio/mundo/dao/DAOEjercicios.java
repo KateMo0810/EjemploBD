@@ -50,7 +50,7 @@ public class DAOEjercicios {
                 promedio = rs.getDouble("avg");
                 estudiante.setPromedio(promedio);
 
-                topico = rs.getString("topico");
+                topico = rs.getString("topic");
                 estudiante.setTopico(topico);
                 
                 
