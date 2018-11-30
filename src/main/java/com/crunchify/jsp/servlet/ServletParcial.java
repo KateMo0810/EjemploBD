@@ -9,6 +9,10 @@ package com.crunchify.jsp.servlet;
 import edu.co.sergio.mundo.dao.DAOEjercicios;
 import edu.co.sergio.mundo.vo.Ejercicios;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -34,8 +38,8 @@ public class ServletParcial extends  HttpServlet{
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
          DAOEjercicios daoEjerci = new DAOEjercicios();
          String topico = request.getParameter("topico");
-         Ejercicios ejercicio= daoEjerci.findAllByTopic(topico);
-         request.setAttribute("promedios", ejercicio);
+          List<Ejercicios> promedios= daoEjerci.findAllByTopic(topico);
+         request.setAttribute("promedios", promedios);
          //Redireccionando la informacion
          RequestDispatcher redireccion = request.getRequestDispatcher("index.jsp");
          redireccion.forward(request, response);      
