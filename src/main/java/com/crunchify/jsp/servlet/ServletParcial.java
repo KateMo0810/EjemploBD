@@ -36,9 +36,7 @@ public class ServletParcial extends  HttpServlet{
      
      
      protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-         DAOEjercicios daoEj = new DAOEjercicios();
-         List<Ejercicios> escuelas= daoEj.findAll();
-         request.setAttribute("topicos", escuelas);
+         
          DAOEjercicios daoEjerci = new DAOEjercicios();
          String topico = request.getParameter("topico");
           List<Ejercicios> promedios= daoEjerci.findAllByTopic(topico);
