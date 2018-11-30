@@ -20,11 +20,12 @@ body {
         
         <div align="center" style="margin-top: 50px;">
             <h1> Lista de Tópicos</h1>
+            <form action="Parcial" method="post">
+                <select name = "topico">
             <%
               if(request.getAttribute("topicos")!=null){
             %>   
-            <form action="Parcial" method="post">
-                <select name = "topico">
+            
            <%
               List<Ejercicios> top  = (List<Ejercicios>)request.getAttribute("topicos");  
                for (Ejercicios ej : top) {
@@ -32,8 +33,13 @@ body {
                <option value="<%=ej.getTopico()%>"><%=ej.getTopico()%></option>
              
              <%
+               }else{
+           %>
+           <option value="0"><holi></option>
+           <%
                }
            %>
+           
                 </select>
                 <input type="submit" value="submit">
             </form>
