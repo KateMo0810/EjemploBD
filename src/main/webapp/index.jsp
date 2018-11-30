@@ -33,7 +33,8 @@ body {
                <option value="<%=ej.getTopico()%>"><%=ej.getTopico()%></option>
              
              <%
-               }else{
+               }
+}else{
            %>
            <option value="0"><holi></option>
            <%
